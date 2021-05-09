@@ -1,0 +1,160 @@
+/*main colors*/
+$primary: #9356dc;
+$secondary: #ff79da;
+$tertiary: #99e2d0;
+$darkgray: #eaeaea;
+$lightgray: #f6f6f6;
+$purplegray: #f5edff;
+$footerblack: #353535;
+$tertiarydark: #008766;
+
+
+/*import fonts from google */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  font-family: "Shrikhand", cursive;
+  font-weight: 350;
+  &--inverted {
+    color: white;
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-size: 210%;
+}
+
+header{
+    box-shadow: 0px 10px 20px  lightgray;
+}
+
+nav {
+  background-color: $darkgray;
+  padding: 0.8em;
+  margin-top: -1.2em;
+}
+
+.nav__icon{
+      margin: 1em;
+  }
+
+
+.bookinfo {
+  background-color: $lightgray;
+  margin-top: -16px;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  &__text {
+    font-weight: lighter;
+    font-size: 110%;
+    padding: 2em;
+  }
+}
+
+.btngeneral {
+  font-size: 120%;
+  color: white;
+  background-color: $primary;
+  border-radius: 2em;
+  padding: 1em;
+  background-image: linear-gradient(to right bottom, $secondary 0%, $primary 70%, $primary  100%);
+  box-shadow: 8px 8px 15px 15px $darkgray;
+}
+
+.howinfo {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+  text-align: left;
+  padding-top: 1em;
+}
+
+.infobox {
+  border-radius: 1.8em;
+  background-color: $lightgray;
+  padding: 1.8em;
+  font-weight: bold;
+  box-shadow: 8px 8px 15px 15px $darkgray;
+  &__number{
+      background-color: $primary;
+      color: white;
+      padding: 0.2em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      border-radius: 2em;
+      margin-left: -2.6em;
+  }
+  &__icon{
+      padding: 1em;
+  }
+  &:hover{
+      background-color: $purplegray;
+  }
+}
+
+.restsection {
+  background-color: $lightgray;
+  display: flex;
+  flex-flow: column;
+  margin-top: 4em;
+  padding-top: 2em;
+  text-align: left;
+}
+
+.restaurant {
+  background-color: white;
+  margin: 1em;
+  border-radius: 1em;
+  height: 18em;
+  text-align: left;
+  box-shadow: 8px 8px 15px 15px $darkgray;
+    &__img{
+        object-fit: cover;
+        height: 13em;
+        float: top;
+        width: 100%;
+        border-top-left-radius: 1em;
+        border-top-right-radius: 1em;
+    }
+
+    &__name{
+        margin-top: 0.4em;
+        margin-bottom: 0.3em;
+        margin-left: 1em;
+    }
+
+    &__location{
+        margin-top: 0em;
+        margin-bottom: 0.4em;
+        margin-left: 1.2em;
+        font-weight: lighter;
+    }
+}
+
+footer {
+  background-color: $footerblack;
+  color: white;
+  text-align: left;
+  padding: 1em;
+}
+
+.footer {
+  &links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link {
+    color: white;
+    text-align: left;
+    margin-top: 0.4em;
+  }
+}
