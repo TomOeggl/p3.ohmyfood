@@ -98,8 +98,8 @@ nav {
   padding: 1em;
 }
 
-.infobox:hover {
-  background-color: #f5edff;
+.infobox:hover > .infobox__icon {
+  color: #9356dc;
 }
 
 .restsection {
@@ -116,6 +116,10 @@ nav {
   text-align: left;
 }
 
+.restsection__heading {
+  margin-left: 1em;
+}
+
 .restaurant {
   background-color: white;
   margin: 1em;
@@ -124,6 +128,7 @@ nav {
   text-align: left;
   -webkit-box-shadow: 8px 8px 15px 15px #eaeaea;
           box-shadow: 8px 8px 15px 15px #eaeaea;
+  position: relative;
 }
 
 .restaurant__img {
@@ -149,6 +154,67 @@ nav {
   font-weight: lighter;
 }
 
+.restaurant__new {
+  background-color: #99e2d0;
+  color: #008766;
+  position: absolute;
+  font-size: 1.3em;
+  right: 3rem;
+  top: 2rem;
+  padding: 0.2em 1.5em 0.2em 1.5em;
+}
+
+.restaurant__heart {
+  position: absolute;
+  right: 4rem;
+  bottom: 4rem;
+  scale: 200%;
+  opacity: 1;
+}
+
+.restaurant__heart--solid {
+  position: absolute;
+  right: 4rem;
+  bottom: 4rem;
+  scale: 200%;
+  opacity: 0;
+  -webkit-transition: color 0.6s ease-in-out;
+  transition: color 0.6s ease-in-out;
+  -webkit-background-clip: text;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background-image: linear-gradient(#9356dc, #ff79da);
+  -webkit-text-fill-color: transparent;
+}
+
+.restaurant__heart:hover {
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  -webkit-background-clip: text;
+  font-weight: 900;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background-image: linear-gradient(#9356dc, #ff79da);
+  -webkit-text-fill-color: transparent;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.restaurant__heart--solid:hover {
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+  opacity: 1;
+  -webkit-transition: color 0.6s ease-in-out;
+  transition: color 0.6s ease-in-out;
+  -webkit-background-clip: text;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background-image: linear-gradient(#9356dc, #ff79da);
+  -webkit-text-fill-color: transparent;
+  /*transition: all .4s ease-in-out;
+      -webkit-background-clip: text;
+      font-weight: 1200;
+      background-image: linear-gradient($primary, $secondary);
+      -webkit-text-fill-color: transparent;*/
+}
+
 footer {
   background-color: #353535;
   color: white;
@@ -170,5 +236,9 @@ footer {
   color: white;
   text-align: left;
   margin-top: 0.4em;
+}
+
+.footer__icon {
+  margin-right: 0.5em;
 }
 /*# sourceMappingURL=style.css.map */
