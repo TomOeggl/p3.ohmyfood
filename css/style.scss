@@ -1,40 +1,12 @@
-/*main colors*/
-$primary: #9356dc;
-$secondary: #ff79da;
-$tertiary: #99e2d0;
-$darkgray: #eaeaea;
-$lightgray: #f6f6f6;
-$purplegray: #f5edff;
-$footerblack: #353535;
-$tertiarydark: #008766;
+@import "./utils/variables.scss";
+@import "./base/typography.scss";
 
 
-/*import fonts from google */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-.logo {
-  font-family: "Shrikhand", cursive;
-  font-weight: 350;
-  &--inverted {
-    color: white;
-  }
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  text-align: center;
-  font-size: 210%;
-}
 
 header{
     box-shadow: 0px 10px 20px  lightgray;
 }
-
+/* HOMEPAGE STYLES*/
 nav {
   background-color: $darkgray;
   padding: 0.8em;
@@ -57,16 +29,8 @@ nav {
     padding: 2em;
   }
 }
+ @import "./components/btngeneral.scss";
 
-.btngeneral {
-  font-size: 120%;
-  color: white;
-  background-color: $primary;
-  border-radius: 2em;
-  padding: 1em;
-  background-image: linear-gradient(to right bottom, $secondary 0%, $primary 70%, $primary  100%);
-  box-shadow: 8px 8px 15px 15px $darkgray;
-}
 
 .howinfo {
   display: flex;
@@ -158,7 +122,7 @@ nav {
         position: absolute;
         right: 4rem;
         bottom: 4rem;
-        scale: 200%;
+        scale: 190%;
         opacity: 1;
         
     }
@@ -170,20 +134,23 @@ nav {
         scale: 200%;
         opacity: 0;
         transition: color 0.6s ease-in-out;
+        background-clip: text;
       -webkit-background-clip: text;
       background-image: linear-gradient($primary, $secondary);
       -webkit-text-fill-color: transparent;
     }
 
     &__heart:hover{
-        
+      opacity: 0;  
+      color: white;
         transition: all .3s ease-in-out;
+        background-clip: text;
       -webkit-background-clip: text;
       font-weight: 900;
       background-image: linear-gradient($primary, $secondary);
       -webkit-text-fill-color: transparent;
       visibility: hidden;
-      opacity: 0;
+      
     }
 
     &__heart--solid:hover{
@@ -191,6 +158,7 @@ nav {
       transition: opacity 1s;
       opacity: 1;
       transition: color 0.6s ease-in-out;
+      background-clip: text;
       -webkit-background-clip: text;
       background-image: linear-gradient($primary, $secondary);
       -webkit-text-fill-color: transparent;
@@ -201,29 +169,8 @@ nav {
       background-image: linear-gradient($primary, $secondary);
       -webkit-text-fill-color: transparent;*/
 
-    }
+    } 
 }
 
-footer {
-  background-color: $footerblack;
-  color: white;
-  text-align: left;
-  padding: 1em;
-}
 
-.footer {
-  &links {
-    display: flex;
-    flex-direction: column;
-  }
-
-  &__link {
-    color: white;
-    text-align: left;
-    margin-top: 0.4em;
-  }
-
-  &__icon{
-    margin-right: 0.5em;
-  }
-}
+@import "./layout/footer.scss";

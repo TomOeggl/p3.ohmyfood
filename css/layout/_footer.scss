@@ -1,0 +1,25 @@
+/* Footer BEM Block for use in entire site*/
+
+footer {
+  background-color: $footerblack;
+  color: white;
+  text-align: left;
+  padding: 1em;
+}
+
+.footer {
+  &links {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link {
+    color: white;
+    text-align: left;
+    margin-top: 0.4em;
+  }
+
+  &__icon {
+    margin-right: 0.5em;
+  }
+}

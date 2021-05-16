@@ -1,0 +1,14 @@
+.btngeneral {
+    font-size: 120%;
+    color: white;
+    background-color: $primary;
+    border-radius: 2em;
+    padding: 1em;
+    background-image: linear-gradient(to right bottom, $secondary 0%, $primary 70%, $primary  100%);
+    box-shadow: 8px 8px 15px 15px $darkgray;
+    &--menu {
+      margin: 2rem;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+  }

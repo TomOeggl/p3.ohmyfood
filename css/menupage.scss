@@ -1,0 +1,73 @@
+@import "./utils/variables.scss";
+@import "./base/typography.scss";
+
+.imageheader{
+    object-fit: contain;
+    max-width: 100%;
+    margin-bottom: -5rem;
+}
+
+.restaurantmenu{
+    background-color: $lightgray;
+    display: flex;
+    flex-flow: column;
+    border-top-left-radius: 2em;
+    border-top-right-radius:2em;
+    position:relative;
+    top: -3rem;
+    padding-bottom: 5em;
+    &__heart{
+        position: absolute;
+        right: 2em;
+        top:2em;
+        scale: 150%;
+        font-weight: lighter;
+    }
+}
+
+.submenu{
+    
+    &__heading{
+        text-transform: uppercase;
+        font-weight: lighter;
+        text-align: left;
+        padding: 2rem;
+        line-height: 00.5em;
+        &__deco{
+            color: $tertiary;
+            font-weight: 800;
+        }    
+    }
+    &__entry{
+        
+        background-color: white;
+        margin: 0.5em;
+        border-radius: 1em;
+        box-shadow: 8px 8px 15px 15px $darkgray;
+        text-align: left;
+        position: relative;
+        padding-bottom: 0.1rem;
+        &__title{
+            scale: 80%;
+            padding-top: 1rem;
+            margin-bottom: -1.2rem;
+            margin-left: -3rem;
+        }
+        &__description{
+            font-weight: lighter;
+            scale: 80%;
+            margin-top: 1.5rem;
+            margin-left: -3rem;
+        }
+        &__price{
+            position: absolute;
+            scale: 75%;
+            right: 1em;
+            bottom: -0.6rem;
+        }
+    }
+}
+
+
+@import "./components/btngeneral.scss";
+@import "./layout/footer.scss";

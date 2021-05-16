@@ -1,0 +1,151 @@
+/*main colors*/
+/*general rules for fonts and links appearance*/
+/*import fonts from google */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  font-family: "Shrikhand", cursive;
+  font-weight: 350;
+}
+
+.logo--inverted {
+  color: white;
+}
+
+.logo--menu {
+  text-align: left;
+  padding-left: 2rem;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-size: 210%;
+}
+
+.imageheader {
+  -o-object-fit: contain;
+     object-fit: contain;
+  max-width: 100%;
+  margin-bottom: -5rem;
+}
+
+.restaurantmenu {
+  background-color: #f6f6f6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  border-top-left-radius: 2em;
+  border-top-right-radius: 2em;
+  position: relative;
+  top: -3rem;
+  padding-bottom: 5em;
+}
+
+.restaurantmenu__heart {
+  position: absolute;
+  right: 2em;
+  top: 2em;
+  scale: 150%;
+  font-weight: lighter;
+}
+
+.submenu__heading {
+  text-transform: uppercase;
+  font-weight: lighter;
+  text-align: left;
+  padding: 2rem;
+  line-height: 00.5em;
+}
+
+.submenu__heading__deco {
+  color: #99e2d0;
+  font-weight: 800;
+}
+
+.submenu__entry {
+  background-color: white;
+  margin: 0.5em;
+  border-radius: 1em;
+  -webkit-box-shadow: 8px 8px 15px 15px #eaeaea;
+          box-shadow: 8px 8px 15px 15px #eaeaea;
+  text-align: left;
+  position: relative;
+  padding-bottom: 0.1rem;
+}
+
+.submenu__entry__title {
+  scale: 80%;
+  padding-top: 1rem;
+  margin-bottom: -1.2rem;
+  margin-left: -3rem;
+}
+
+.submenu__entry__description {
+  font-weight: lighter;
+  scale: 80%;
+  margin-top: 1.5rem;
+  margin-left: -3rem;
+}
+
+.submenu__entry__price {
+  position: absolute;
+  scale: 75%;
+  right: 1em;
+  bottom: -0.6rem;
+}
+
+.btngeneral {
+  font-size: 120%;
+  color: white;
+  background-color: #9356dc;
+  border-radius: 2em;
+  padding: 1em;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ff79da), color-stop(70%, #9356dc), to(#9356dc));
+  background-image: linear-gradient(to right bottom, #ff79da 0%, #9356dc 70%, #9356dc 100%);
+  -webkit-box-shadow: 8px 8px 15px 15px #eaeaea;
+          box-shadow: 8px 8px 15px 15px #eaeaea;
+}
+
+.btngeneral--menu {
+  margin: 2rem;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+/* Footer BEM Block for use in entire site*/
+footer {
+  background-color: #353535;
+  color: white;
+  text-align: left;
+  padding: 1em;
+}
+
+.footerlinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer__link {
+  color: white;
+  text-align: left;
+  margin-top: 0.4em;
+}
+
+.footer__icon {
+  margin-right: 0.5em;
+}
+/*# sourceMappingURL=menupage.css.map */
