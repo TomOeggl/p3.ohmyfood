@@ -63,6 +63,10 @@ nav {
   &:hover > &__icon{
       color: $primary;
   }
+
+  &:hover{
+    background-color: $purplegray;
+  }
 }
 
 

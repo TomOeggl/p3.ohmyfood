@@ -115,6 +115,10 @@ nav {
   color: #9356dc;
 }
 
+.infobox:hover {
+  background-color: #f5edff;
+}
+
 .restsection {
   background-color: #f6f6f6;
   display: -webkit-box;
