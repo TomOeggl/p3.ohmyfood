@@ -4,11 +4,19 @@
     background-color: $primary;
     border-radius: 2em;
     padding: 1em;
+    border: 0px solid black;
     background-image: linear-gradient(to right bottom, $secondary 0%, $primary 70%, $primary  100%);
+    -webkit-background-image: linear-gradient(to right bottom, $secondary 0%, $primary 70%, $primary  100%);
     box-shadow: 8px 8px 15px 15px $darkgray;
+    transition: transform .3s ease-in-out;
     &--menu {
       margin: 2rem;
       padding-left: 1em;
       padding-right: 1em;
+    }
+    &:hover{
+      box-shadow: 8px 8px 15px 15px rgb(216, 215, 215);
+      background-image: linear-gradient(to right bottom, $secondary 0%, $primary 60%, $primary  100%);
+      -webkit-background-image: linear-gradient(to right bottom, $secondary 0%, $primary 60%, $primary  100%);
     }
   }

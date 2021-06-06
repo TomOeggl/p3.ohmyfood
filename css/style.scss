@@ -1,8 +1,123 @@
 @import "./utils/variables.scss";
 @import "./base/typography.scss";
 
+@-webkit-keyframes spinner {
+  0% {
+      transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(1);
+  }
+  50%{
+      transform: translate3d(-50%, -50%, 0) rotate(180deg) scale(1.2);
+  }
+  100% {
+       transform: translate3d(-50%, -50%, 0) rotate(360deg) scale(1);
+
+  }
+}
+
+@keyframes spinner {
+  0% {
+      transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(1);
+  }
+  50%{
+      transform: translate3d(-50%, -50%, 0) rotate(180deg) scale(1.2);
+  }
+  100% {
+       transform: translate3d(-50%, -50%, 0) rotate(360deg) scale(1);
+
+  }
+}
+
+@-webkit-keyframes containerOff{
+  0%{
+    height: 100vh;
+    opacity: 1;
+  }
+
+  100%{
+    transform: translateY(-9999px);
+    opacity: 0;
+    height: 0px;
+    padding: -16px;
+    margin: 0em;
+  }
+}
+
+@keyframes containerOff{
+  0%{
+    height: 100vh;
+    opacity: 1;
+  }
+
+  100%{
+    transform: translateY(-9999px);
+    opacity: 0;
+    height: 0px;
+    padding: -16px;
+    margin: 0em;
+  }
+}
+.spinnercontainer{
+  -webkit-animation: step-start containerOff infinite;
+          animation: step-start containerOff infinite;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+.spinner {
+  // The height here is just for demo purposes
+  height: 100vh;
+  opacity: 1;
+  position: relative;
+  transition: opacity linear 0.1s;        
+  &::before {
+      -webkit-animation: 2s linear infinite spinner;
+              animation: 2s linear infinite spinner;
+      border: solid 6px $tertiary;
+      border-bottom-color: $secondary;
+      border-radius: 50%;
+      content: "";
+      height: 40px;
+      left: 50%;
+      opacity: inherit;
+      position: absolute;
+      top: 50%;
+      transform: translate3d(-50%, -50%, 0);
+      transform-origin: center;
+      width: 40px;
+      will-change: transform;
+      
+  }
+} 
+
+/*
+.loader{
+    width: 3em;
+    height: 3em;
+    position: relative;
+    
+      &::before{
+        animation: 2s linear infinite loaderspin;
+        border-radius: 50%;
+        border-color: $tertiary;
+        border-top-color: $secondary;
+
+      }
 
 
+
+}
+
+@keyframes loaderspin {
+  0% {
+      transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+  100% {
+       transform: translate3d(-50%, -50%, 0) rotate(360deg);
+  }
+}
+*/
 header{
     box-shadow: 0px 10px 20px  lightgray;
 }
@@ -91,7 +206,8 @@ nav {
   box-shadow: 8px 8px 15px 15px $darkgray;
   position: relative;
     &__img{
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
         height: 13em;
         float: top;
         width: 100%;
@@ -126,18 +242,20 @@ nav {
         position: absolute;
         right: 4rem;
         bottom: 4rem;
-        scale: 190%;
-        opacity: 1;
         
+        opacity: 1;
+        transition: all .3s ease-in-out;
+        z-index: 0;
     }
 
     &__heart--solid{
         position: absolute;
         right: 4rem;
         bottom: 4rem;
-        scale: 200%;
+        padding: 0.2rem;
+        margin: -0.2rem;
         opacity: 0;
-        transition: color 0.6s ease-in-out;
+        transition: all 0.6s ease-in-out;
         background-clip: text;
       -webkit-background-clip: text;
       background-image: linear-gradient($primary, $secondary);
@@ -147,26 +265,30 @@ nav {
     &__heart:hover{
       opacity: 0;  
       color: white;
-        transition: all .3s ease-in-out;
+       
         background-clip: text;
       -webkit-background-clip: text;
       font-weight: 900;
       background-image: linear-gradient($primary, $secondary);
       -webkit-text-fill-color: transparent;
       visibility: hidden;
+      transform: scale(0.2);
+      z-index: -1;
       
     }
 
     &__heart--solid:hover{
       
+      stroke-width: 100px;
       transition: opacity 1s;
       opacity: 1;
-      transition: color 0.6s ease-in-out;
+      transition: all 0.6s ease-in-out;
       background-clip: text;
       -webkit-background-clip: text;
       background-image: linear-gradient($primary, $secondary);
       -webkit-text-fill-color: transparent;
       
+    
       /*transition: all .4s ease-in-out;
       -webkit-background-clip: text;
       font-weight: 1200;

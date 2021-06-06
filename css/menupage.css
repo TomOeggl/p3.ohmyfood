@@ -55,7 +55,7 @@ body {
 
 .imageheader {
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   max-width: 100%;
   margin-bottom: -5rem;
 }
@@ -79,15 +79,53 @@ body {
 .restaurantmenu__heart {
   position: absolute;
   right: 2em;
-  top: 2em;
-  scale: 150%;
-  font-weight: lighter;
+  top: 1.4em;
+  z-index: 1;
 }
 
+.restaurantmenu__heart:hover {
+  color: red;
+}
+
+.restaurantmenu__heart--solid {
+  position: absolute;
+  right: 2em;
+  top: 1.4em;
+  padding: 0.2rem;
+  margin: -0.2rem;
+  opacity: 0;
+  -webkit-transition: opacity 0.6s ease-in-out;
+  transition: opacity 0.6s ease-in-out;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background-image: linear-gradient(#9356dc, #ff79da);
+  -webkit-text-fill-color: transparent;
+  z-index: 1;
+}
+
+.restaurantmenu__heart--solid:hover {
+  opacity: 1;
+  -webkit-transform: scale(103%);
+          transform: scale(103%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background-image: linear-gradient(#9356dc, #ff79da);
+  -webkit-text-fill-color: transparent;
+}
+
+/*.testclass{
+    z-index: 0;
+}
+
+.testclass:hover{
+    opacity: 0;
+}*/
 .fa-check-circle {
-  scale: 170%;
-  -webkit-transform: rotate(1turn);
-          transform: rotate(1turn);
+  transform: scale(1.7);
+  -webkit-transform: scale(1.7);
+  transform: rotate(1turn);
   -webkit-transition: -webkit-transform 360ms ease-out 70ms;
   transition: -webkit-transform 360ms ease-out 70ms;
   transition: transform 360ms ease-out 70ms;
@@ -108,6 +146,7 @@ body {
 }
 
 .submenu__entry {
+  max-height: 5.5em;
   background-color: white;
   margin: 0.5em;
   border-radius: 1em;
@@ -121,34 +160,35 @@ body {
 
 .submenu__entry:nth-child(2) {
   -webkit-animation: slideFromDown 1.5s;
-          animation: slideFromDown 1.5s;
-  -webkit-animation-delay: 120ms;
-          animation-delay: 120ms;
+  animation: slideFromDown 1.5s;
+  -webkit-animation-delay: 300ms;
+  animation-delay: 300ms;
 }
 
 .submenu__entry:nth-child(3) {
   -webkit-animation: slideFromDown 1.5s;
-          animation: slideFromDown 1.5s;
-  -webkit-animation-delay: 180ms;
-          animation-delay: 180ms;
+  animation: slideFromDown 1.5s;
+  -webkit-animation-delay: 450ms;
+  animation-delay: 450ms;
 }
 
 .submenu__entry:nth-child(4) {
   -webkit-animation: slideFromDown 1.5s;
-          animation: slideFromDown 1.5s;
-  -webkit-animation-delay: 240ms;
-          animation-delay: 240ms;
+  animation: slideFromDown 1.5s;
+  -webkit-animation-delay: 600ms;
+  animation-delay: 600ms;
 }
 
 .submenu__entry:nth-child(5) {
   -webkit-animation: slideFromDown 1.5s;
-          animation: slideFromDown 1.5s;
-  -webkit-animation-delay: 300ms;
-          animation-delay: 300ms;
+  animation: slideFromDown 1.5s;
+  -webkit-animation-delay: 750ms;
+  animation-delay: 750ms;
 }
 
 .submenu__entry__title {
-  scale: 80%;
+  -webkit-transform: scale(80%);
+          transform: scale(80%);
   padding-top: 1rem;
   margin-bottom: -1.2rem;
   margin-left: -3rem;
@@ -156,7 +196,8 @@ body {
 
 .submenu__entry__description {
   font-weight: lighter;
-  scale: 80%;
+  -webkit-transform: scale(80%);
+          transform: scale(80%);
   margin-top: 1.5rem;
   margin-left: -3rem;
 }
@@ -164,6 +205,8 @@ body {
 .submenu__entry__price {
   position: absolute;
   scale: 75%;
+  -webkit-transform: scale(75%);
+          transform: scale(75%);
   right: 1em;
   bottom: -0.6rem;
   -webkit-transform: translateX(0);
@@ -193,6 +236,12 @@ body {
   transition: transform 330ms ease-in-out 50ms, -webkit-transform 330ms ease-in-out 50ms;
 }
 
+@-moz-document url-prefix() {
+  .submenu__entry__check {
+    right: 0rem;
+  }
+}
+
 .submenu__entry:hover > .submenu__entry__check {
   -webkit-transform: translateX(1%);
           transform: translateX(1%);
@@ -214,16 +263,32 @@ body {
   background-color: #9356dc;
   border-radius: 2em;
   padding: 1em;
+  border: 0px solid black;
   background-image: -webkit-gradient(linear, left top, right bottom, from(#ff79da), color-stop(70%, #9356dc), to(#9356dc));
   background-image: linear-gradient(to right bottom, #ff79da 0%, #9356dc 70%, #9356dc 100%);
+  -webkit-background-image: -webkit-gradient(linear, left top, right bottom, from(#ff79da), color-stop(70%, #9356dc), to(#9356dc));
+  -webkit-background-image: linear-gradient(to right bottom, #ff79da 0%, #9356dc 70%, #9356dc 100%);
   -webkit-box-shadow: 8px 8px 15px 15px #eaeaea;
           box-shadow: 8px 8px 15px 15px #eaeaea;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
 }
 
 .btngeneral--menu {
   margin: 2rem;
   padding-left: 1em;
   padding-right: 1em;
+}
+
+.btngeneral:hover {
+  -webkit-box-shadow: 8px 8px 15px 15px #d8d7d7;
+          box-shadow: 8px 8px 15px 15px #d8d7d7;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ff79da), color-stop(60%, #9356dc), to(#9356dc));
+  background-image: linear-gradient(to right bottom, #ff79da 0%, #9356dc 60%, #9356dc 100%);
+  -webkit-background-image: -webkit-gradient(linear, left top, right bottom, from(#ff79da), color-stop(60%, #9356dc), to(#9356dc));
+  -webkit-background-image: linear-gradient(to right bottom, #ff79da 0%, #9356dc 60%, #9356dc 100%);
 }
 
 /* Footer BEM Block for use in entire site*/
