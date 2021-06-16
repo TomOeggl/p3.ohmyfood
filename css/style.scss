@@ -39,6 +39,7 @@
     height: 0px;
     padding: -16px;
     margin: 0em;
+    height: 0vh;
   }
 }
 
@@ -66,7 +67,6 @@
 }
 
 .spinner {
-  // The height here is just for demo purposes
   height: 100vh;
   opacity: 1;
   position: relative;
@@ -91,33 +91,7 @@
   }
 } 
 
-/*
-.loader{
-    width: 3em;
-    height: 3em;
-    position: relative;
-    
-      &::before{
-        animation: 2s linear infinite loaderspin;
-        border-radius: 50%;
-        border-color: $tertiary;
-        border-top-color: $secondary;
 
-      }
-
-
-
-}
-
-@keyframes loaderspin {
-  0% {
-      transform: translate3d(-50%, -50%, 0) rotate(0deg);
-  }
-  100% {
-       transform: translate3d(-50%, -50%, 0) rotate(360deg);
-  }
-}
-*/
 header{
     box-shadow: 0px 10px 20px  lightgray;
 }
@@ -244,57 +218,36 @@ nav {
         bottom: 4rem;
         
         opacity: 1;
-        transition: all .3s ease-in-out;
-        z-index: 0;
-    }
+        transition: opacity .7s ease-in-out;
+        z-index: 1;
+    
 
-    &__heart--solid{
+      &--solid{
         position: absolute;
         right: 4rem;
         bottom: 4rem;
         padding: 0.2rem;
         margin: -0.2rem;
         opacity: 0;
-        transition: all 0.6s ease-in-out;
+        transition: opacity 0.6s ease-in-out;
         background-clip: text;
-      -webkit-background-clip: text;
-      background-image: linear-gradient($primary, $secondary);
-      -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-image: linear-gradient($primary, $secondary);
+        -webkit-text-fill-color: transparent;
+      }
     }
-
     &__heart:hover{
       opacity: 0;  
-      color: white;
-       
-        background-clip: text;
-      -webkit-background-clip: text;
-      font-weight: 900;
-      background-image: linear-gradient($primary, $secondary);
-      -webkit-text-fill-color: transparent;
-      visibility: hidden;
-      transform: scale(0.2);
-      z-index: -1;
-      
     }
 
-    &__heart--solid:hover{
+    &__heart:hover + &__heart--solid{
       
-      stroke-width: 100px;
-      transition: opacity 1s;
       opacity: 1;
-      transition: all 0.6s ease-in-out;
-      background-clip: text;
-      -webkit-background-clip: text;
-      background-image: linear-gradient($primary, $secondary);
-      -webkit-text-fill-color: transparent;
-      
-    
-      /*transition: all .4s ease-in-out;
-      -webkit-background-clip: text;
-      font-weight: 1200;
-      background-image: linear-gradient($primary, $secondary);
-      -webkit-text-fill-color: transparent;*/
-
+        transform: scale(100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: linear-gradient($primary, $secondary);
+        -webkit-text-fill-color: transparent;
     } 
 }
 

@@ -81,10 +81,8 @@ body {
   right: 2em;
   top: 1.4em;
   z-index: 1;
-}
-
-.restaurantmenu__heart:hover {
-  color: red;
+  -webkit-transition: opacity 0.7s ease-in-out;
+  transition: opacity 0.7s ease-in-out;
 }
 
 .restaurantmenu__heart--solid {
@@ -101,13 +99,16 @@ body {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
   background-image: linear-gradient(#9356dc, #ff79da);
   -webkit-text-fill-color: transparent;
-  z-index: 1;
 }
 
-.restaurantmenu__heart--solid:hover {
+.restaurantmenu__heart:hover {
+  opacity: 0;
+}
+
+.restaurantmenu__heart:hover + .restaurantmenu__heart--solid {
   opacity: 1;
-  -webkit-transform: scale(103%);
-          transform: scale(103%);
+  -webkit-transform: scale(100%);
+          transform: scale(100%);
   background-clip: text;
   -webkit-background-clip: text;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
@@ -115,13 +116,6 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/*.testclass{
-    z-index: 0;
-}
-
-.testclass:hover{
-    opacity: 0;
-}*/
 .fa-check-circle {
   transform: scale(1.7);
   -webkit-transform: scale(1.7);
@@ -191,7 +185,11 @@ body {
           transform: scale(80%);
   padding-top: 1rem;
   margin-bottom: -1.2rem;
-  margin-left: -3rem;
+  margin-left: -6vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis !important;
+  min-width: none;
 }
 
 .submenu__entry__description {
@@ -199,7 +197,12 @@ body {
   -webkit-transform: scale(80%);
           transform: scale(80%);
   margin-top: 1.5rem;
-  margin-left: -3rem;
+  margin-left: -5.3vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis !important;
+  min-width: none;
+  max-width: 100%;
 }
 
 .submenu__entry__price {
@@ -218,16 +221,15 @@ body {
 }
 
 .submenu__entry__check {
-  display: inline-block;
   position: absolute;
-  right: 0em;
-  /*scale: 150%;*/
+  right: 0vw;
   bottom: 0em;
   color: white;
   background-color: #99e2d0;
   padding: 2.2em;
   border-bottom-right-radius: 0.7em;
   border-top-right-radius: 0.7em;
+  z-index: 0;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   -webkit-transition: -webkit-transform 330ms ease-in-out 50ms;

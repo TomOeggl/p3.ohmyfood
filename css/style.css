@@ -69,6 +69,7 @@ body {
     height: 0px;
     padding: -16px;
     margin: 0em;
+    height: 0vh;
   }
 }
 
@@ -124,33 +125,6 @@ body {
   will-change: transform;
 }
 
-/*
-.loader{
-    width: 3em;
-    height: 3em;
-    position: relative;
-    
-      &::before{
-        animation: 2s linear infinite loaderspin;
-        border-radius: 50%;
-        border-color: $tertiary;
-        border-top-color: $secondary;
-
-      }
-
-
-
-}
-
-@keyframes loaderspin {
-  0% {
-      transform: translate3d(-50%, -50%, 0) rotate(0deg);
-  }
-  100% {
-       transform: translate3d(-50%, -50%, 0) rotate(360deg);
-  }
-}
-*/
 header {
   -webkit-box-shadow: 0px 10px 20px  lightgray;
           box-shadow: 0px 10px 20px  lightgray;
@@ -326,9 +300,9 @@ nav {
   right: 4rem;
   bottom: 4rem;
   opacity: 1;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-  z-index: 0;
+  -webkit-transition: opacity .7s ease-in-out;
+  transition: opacity .7s ease-in-out;
+  z-index: 1;
 }
 
 .restaurant__heart--solid {
@@ -338,8 +312,8 @@ nav {
   padding: 0.2rem;
   margin: -0.2rem;
   opacity: 0;
-  -webkit-transition: all 0.6s ease-in-out;
-  transition: all 0.6s ease-in-out;
+  -webkit-transition: opacity 0.6s ease-in-out;
+  transition: opacity 0.6s ease-in-out;
   background-clip: text;
   -webkit-background-clip: text;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
@@ -349,36 +323,17 @@ nav {
 
 .restaurant__heart:hover {
   opacity: 0;
-  color: white;
-  background-clip: text;
-  -webkit-background-clip: text;
-  font-weight: 900;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
-  background-image: linear-gradient(#9356dc, #ff79da);
-  -webkit-text-fill-color: transparent;
-  visibility: hidden;
-  -webkit-transform: scale(0.2);
-          transform: scale(0.2);
-  z-index: -1;
 }
 
-.restaurant__heart--solid:hover {
-  stroke-width: 100px;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
+.restaurant__heart:hover + .restaurant__heart--solid {
   opacity: 1;
-  -webkit-transition: all 0.6s ease-in-out;
-  transition: all 0.6s ease-in-out;
+  -webkit-transform: scale(100%);
+          transform: scale(100%);
   background-clip: text;
   -webkit-background-clip: text;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
   background-image: linear-gradient(#9356dc, #ff79da);
   -webkit-text-fill-color: transparent;
-  /*transition: all .4s ease-in-out;
-      -webkit-background-clip: text;
-      font-weight: 1200;
-      background-image: linear-gradient($primary, $secondary);
-      -webkit-text-fill-color: transparent;*/
 }
 
 /* Footer BEM Block for use in entire site*/
