@@ -81,8 +81,8 @@ body {
   right: 2em;
   top: 1.4em;
   z-index: 1;
-  -webkit-transition: opacity 0.7s ease-in-out;
-  transition: opacity 0.7s ease-in-out;
+  -webkit-transition: opacity 0.7s ease-in;
+  transition: opacity 0.7s ease-in;
 }
 
 .restaurantmenu__heart--solid {
@@ -92,8 +92,8 @@ body {
   padding: 0.2rem;
   margin: -0.2rem;
   opacity: 0;
-  -webkit-transition: opacity 0.6s ease-in-out;
-  transition: opacity 0.6s ease-in-out;
+  -webkit-transition: opacity 0.6s ease-in;
+  transition: opacity 0.6s ease-in;
   background-clip: text;
   -webkit-background-clip: text;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
@@ -150,6 +150,8 @@ body {
   position: relative;
   padding-bottom: 0.1rem;
   overflow: hidden;
+  min-width: 23em;
+  /*unmodified*/
 }
 
 .submenu__entry:nth-child(2) {
@@ -178,6 +180,100 @@ body {
   animation: slideFromDown 1.5s;
   -webkit-animation-delay: 750ms;
   animation-delay: 750ms;
+}
+
+.submenu__entry__textcontainer {
+  display: block;
+  -webkit-transition: margin-right ease-in-out 230ms, margin-left ease-in-out 230ms;
+  transition: margin-right ease-in-out 230ms, margin-left ease-in-out 230ms;
+  -webkit-transition: all ease-in-out 270ms;
+  transition: all ease-in-out 270ms;
+}
+
+.submenu__entry__textcontainer__title {
+  -webkit-transform: scale(80%);
+          transform: scale(80%);
+  padding-top: 0rem;
+  font-size: 1.4em;
+  margin-bottom: -1.2rem;
+  margin-left: -6vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis !important;
+  min-width: none;
+  /*transition: transform 150ms ease-in-out 80ms;*/
+}
+
+.submenu__entry__textcontainer__description {
+  font-weight: lighter;
+  -webkit-transform: scale(80%);
+          transform: scale(80%);
+  margin-top: 1.5rem;
+  font-size: 1.3em;
+  margin-left: -5.3vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis !important;
+  min-width: none;
+  max-width: 100%;
+  padding-bottom: 0.5rem;
+  /*transition: transform 150ms ease-in-out 80ms;*/
+}
+
+.submenu__entry__movables__price {
+  position: absolute;
+  scale: 75%;
+  -webkit-transform: scale(75%);
+          transform: scale(75%);
+  right: 1em;
+  bottom: -0.6rem;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 150ms ease-in 80ms;
+  transition: -webkit-transform 150ms ease-in 80ms;
+  transition: transform 150ms ease-in 80ms;
+  transition: transform 150ms ease-in 80ms, -webkit-transform 150ms ease-in 80ms;
+  font-size: 1.4em;
+}
+
+.submenu__entry__movables__check {
+  position: absolute;
+  right: 0vw;
+  bottom: 0em;
+  color: white;
+  background-color: #99e2d0;
+  padding: 2.2em;
+  border-bottom-right-radius: 0.7em;
+  border-top-right-radius: 0.7em;
+  z-index: 0;
+  opacity: 1;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 330ms ease-in-out 50ms;
+  transition: -webkit-transform 330ms ease-in-out 50ms;
+  transition: transform 330ms ease-in-out 50ms;
+  transition: transform 330ms ease-in-out 50ms, -webkit-transform 330ms ease-in-out 50ms;
+}
+
+@-moz-document url-prefix() {
+  .submenu__entry__movables__check {
+    right: 0rem;
+  }
+}
+
+.submenu__entry:hover > .submenu__entry__movables h3 {
+  -webkit-transform: translateX(-5.2em);
+          transform: translateX(-5.2em);
+}
+
+.submenu__entry:hover > .submenu__entry__movables span {
+  -webkit-transform: translateX(1%);
+          transform: translateX(1%);
+}
+
+.submenu__entry:hover > .submenu__entry__movables span .fa-check-circle {
+  -webkit-transform: rotate(3turn);
+          transform: rotate(3turn);
 }
 
 .submenu__entry__title {
@@ -257,6 +353,17 @@ body {
 .submenu__entry:hover > .submenu__entry__price {
   -webkit-transform: translateX(-5.2em);
           transform: translateX(-5.2em);
+}
+
+.submenu__entry:hover > .submenu__entry__textcontainer {
+  margin-right: 10.2em;
+  -webkit-transform: translateX(1.2em);
+          transform: translateX(1.2em);
+  /*margin-left: .9203em;*/
+  /* transform: translateX(-9.2em);*/
+  /*p{
+            margin-left: .9203em;
+            }*/
 }
 
 .btngeneral {
