@@ -1,0 +1,250 @@
+@import "./utils/variables.scss";
+@import "./base/typography.scss";
+
+$entry-delay: 150ms;
+
+@-webkit-keyframes slideFromDown {
+    0%{
+        transform: translateY(20%);
+        opacity: .2;
+    }
+    100%{
+        transform: translateY(0%); 
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromDown {
+    0%{
+        transform: translateY(20%);
+        opacity: .2;
+    }
+    100%{
+        transform: translateY(0%); 
+        opacity: 1;
+    }
+}
+
+@mixin entryAnimation($n){
+    @for $i from 2 through $n{
+        &:nth-child(#{$i}){
+            -webkit-animation: slideFromDown 1.5s;
+                    animation: slideFromDown 1.5s;
+            -webkit-animation-delay: $entry-delay * $i;
+                    animation-delay: $entry-delay * $i;
+        }
+    }
+}
+
+.goback{
+    position: absolute;
+    top: 5rem;
+    left: 4rem;
+}
+
+.imageheader{
+    -o-object-fit: contain;
+       object-fit: contain;
+    max-width: 100%;
+    margin-bottom: -5rem;
+}
+
+.restaurantmenu{
+    background-color: $lightgray;
+    display: flex;
+    flex-flow: column;
+    border-top-left-radius: 2em;
+    border-top-right-radius:2em;
+    position:relative;
+    top: -3rem;
+    padding-bottom: 5em;
+    &__heart{
+        position: absolute;
+        right: 2em;
+        top:1.4em;
+        z-index: 1;
+        transition: opacity 0.7s ease-in;
+        
+            &--solid{
+                position: absolute;
+                right: 2em;
+                top:1.4em;
+                padding: 0.2rem;
+                margin: -0.2rem;
+                opacity: 0;
+                transition: opacity 0.6s ease-in;
+                background-clip: text;
+                -webkit-background-clip: text;
+                background-image: linear-gradient($primary, $secondary);
+                -webkit-text-fill-color: transparent;
+            }
+    }
+
+    &__heart:hover{
+        opacity: 0; 
+    }
+
+    &__heart:hover + &__heart--solid{
+        opacity: 1;
+        transform: scale(100%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        background-image: linear-gradient($primary, $secondary);
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+
+
+.fa-check-circle{
+    transform: scale(1.7);
+    -webkit-transform: scale(1.7);
+    transform: rotate(1turn);
+    transition: transform 360ms ease-out 70ms;
+    
+}
+
+.submenu{
+    
+    &__heading{
+        text-transform: uppercase;
+        font-weight: lighter;
+        text-align: left;
+        padding: 2rem;
+        line-height: 00.5em;
+        &__deco{
+            color: $tertiary;
+            font-weight: 800;
+        }    
+    }
+    &__entry{
+        @include entryAnimation(5);
+        max-height: 5.5em;
+        background-color: white;
+        margin: 0.5em;
+        border-radius: 1em;
+        box-shadow: 8px 8px 15px 15px $darkgray;
+        text-align: left;
+        position: relative;
+        padding-bottom: 0.1rem;
+        overflow: hidden;
+        min-width: 23em;
+        
+        &__textcontainer{
+            display: block;
+            
+            transition: margin-right ease-in-out 230ms, margin-left ease-in-out 230ms;
+            transition: all ease-in-out 270ms;
+            &__title{
+                transform: scale(80%);
+                padding-top: 0rem;
+                font-size: 1.4em;
+                margin-bottom: -1.2rem;
+                margin-left: -6vw;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis !important;
+                min-width: none;
+                
+                /*transition: transform 150ms ease-in-out 80ms;*/
+            }
+            &__description{
+                font-weight: lighter;
+                transform: scale(80%);
+                margin-top: 1.5rem;
+                font-size: 1.3em;
+                margin-left: -5.3vw;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis !important;
+                min-width: none;
+                max-width: 100%;
+                padding-bottom: 0.5rem;
+                padding-right: 0em;
+                margin-right: 0vw;
+                /*transition: transform 150ms ease-in-out 80ms;*/
+            }
+        }
+
+        &__movables{
+
+            &__price{
+                position: absolute;
+                scale: 75%;
+                transform: scale(75%);
+                right: 1.5rem;
+                bottom: -1.5rem;
+                transform: translateX(0);
+                transition: transform 150ms ease-in 80ms; 
+                font-size: 1.4em;
+            }
+            &__check{
+                
+                position: absolute;
+                right: 0vw;
+                bottom: 0em;
+                color: white;
+                background-color: $tertiary;
+                padding: 2.2em;
+                border-bottom-right-radius: 0.7em;
+                border-top-right-radius: 0.7em;
+                z-index: 0;
+                
+                transform: translateX(100%);
+                
+                
+                transition: transform 330ms ease-in-out 50ms;
+               @-moz-document url-prefix() {
+                   right: calc(0vw - 4px);     
+                           
+                }
+                
+            }
+        }
+        &:hover > &__movables{
+            
+            h3{
+                transform: translateX(-5.2em);
+            }  
+            span{
+                
+                opacity: 1;
+                transform: translateX(1%);
+                .fa-check-circle{
+                    transform:rotate(3turn);
+                }
+                
+            }
+        }
+        
+
+        &:hover > &__check{
+            transform: translateX(1%) ;
+            .fa-check-circle{
+                transform:rotate(3turn);
+            }
+        }
+        &:hover > &__price{
+            transform: translateX(-5.2em);
+        }  
+
+        &:hover > &__textcontainer{
+            margin-right: 8em;
+            transform: translateX(.8em);
+           /*margin-left: .9203em;*/
+            /* transform: translateX(-9.2em);*/
+           /*p{
+            margin-left: .9203em;
+            }*/
+            
+        }
+
+            
+    }
+}
+
+
+@import "./components/btngeneral.scss";
+@import "./layout/footer.scss";
+
+

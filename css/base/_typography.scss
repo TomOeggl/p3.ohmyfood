@@ -1,0 +1,30 @@
+/*general rules for fonts and links appearance*/
+
+/*import fonts from google */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
+
+
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  font-family: "Shrikhand", cursive;
+  font-weight: 350;
+  &--inverted {
+    color: white;
+  }
+  &--menu {
+    text-align: left;
+    padding-left: 3rem;
+    font-size: 1.7em;
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-size: 210%;
+}

@@ -1,0 +1,367 @@
+/*main colors*/
+/*general rules for fonts and links appearance*/
+/*import fonts from google */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  font-family: "Shrikhand", cursive;
+  font-weight: 350;
+}
+
+.logo--inverted {
+  color: white;
+}
+
+.logo--menu {
+  text-align: left;
+  padding-left: 3rem;
+  font-size: 1.7em;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  font-size: 210%;
+}
+
+@-webkit-keyframes spinner {
+  0% {
+    -webkit-transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(1);
+            transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: translate3d(-50%, -50%, 0) rotate(180deg) scale(1.2);
+            transform: translate3d(-50%, -50%, 0) rotate(180deg) scale(1.2);
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, -50%, 0) rotate(360deg) scale(1);
+            transform: translate3d(-50%, -50%, 0) rotate(360deg) scale(1);
+  }
+}
+
+@keyframes spinner {
+  0% {
+    -webkit-transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(1);
+            transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(1);
+  }
+  50% {
+    -webkit-transform: translate3d(-50%, -50%, 0) rotate(180deg) scale(1.2);
+            transform: translate3d(-50%, -50%, 0) rotate(180deg) scale(1.2);
+  }
+  100% {
+    -webkit-transform: translate3d(-50%, -50%, 0) rotate(360deg) scale(1);
+            transform: translate3d(-50%, -50%, 0) rotate(360deg) scale(1);
+  }
+}
+
+@-webkit-keyframes containerOff {
+  0% {
+    height: 100vh;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-9999px);
+            transform: translateY(-9999px);
+    opacity: 0;
+    height: 0px;
+    padding: -16px;
+    margin: 0em;
+    height: 0vh;
+  }
+}
+
+@keyframes containerOff {
+  0% {
+    height: 100vh;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(-9999px);
+            transform: translateY(-9999px);
+    opacity: 0;
+    height: 0px;
+    padding: -16px;
+    margin: 0em;
+  }
+}
+
+.spinnercontainer {
+  -webkit-animation: step-start containerOff infinite;
+  animation: step-start containerOff infinite;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+
+.spinner {
+  height: 100vh;
+  opacity: 1;
+  position: relative;
+  -webkit-transition: opacity linear 0.1s;
+  transition: opacity linear 0.1s;
+}
+
+.spinner::before {
+  -webkit-animation: 2s linear infinite spinner;
+  animation: 2s linear infinite spinner;
+  border: solid 6px #99e2d0;
+  border-bottom-color: #ff79da;
+  border-radius: 50%;
+  content: "";
+  height: 40px;
+  left: 50%;
+  opacity: inherit;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  width: 40px;
+  will-change: transform;
+}
+
+header {
+  -webkit-box-shadow: 0px 10px 20px  lightgray;
+          box-shadow: 0px 10px 20px  lightgray;
+}
+
+/* HOMEPAGE STYLES*/
+nav {
+  background-color: #eaeaea;
+  padding: 0.8em;
+  margin-top: -1.2em;
+}
+
+.nav__icon {
+  margin: 1em;
+}
+
+.bookinfo {
+  background-color: #f6f6f6;
+  margin-top: -16px;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.bookinfo__text {
+  font-weight: lighter;
+  font-size: 110%;
+  padding: 2em;
+}
+
+.btngeneral {
+  font-size: 120%;
+  color: white;
+  background-color: #9356dc;
+  border-radius: 2em;
+  padding: 1em;
+  border: 0px solid black;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ff79da), color-stop(70%, #9356dc), to(#9356dc));
+  background-image: linear-gradient(to right bottom, #ff79da 0%, #9356dc 70%, #9356dc 100%);
+  -webkit-background-image: -webkit-gradient(linear, left top, right bottom, from(#ff79da), color-stop(70%, #9356dc), to(#9356dc));
+  -webkit-background-image: linear-gradient(to right bottom, #ff79da 0%, #9356dc 70%, #9356dc 100%);
+  -webkit-box-shadow: 8px 8px 15px 15px #eaeaea;
+          box-shadow: 8px 8px 15px 15px #eaeaea;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+}
+
+.btngeneral--menu {
+  margin: 2rem;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.btngeneral:hover {
+  -webkit-box-shadow: 8px 8px 15px 15px #d8d7d7;
+          box-shadow: 8px 8px 15px 15px #d8d7d7;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(#ff79da), color-stop(60%, #9356dc), to(#9356dc));
+  background-image: linear-gradient(to right bottom, #ff79da 0%, #9356dc 60%, #9356dc 100%);
+  -webkit-background-image: -webkit-gradient(linear, left top, right bottom, from(#ff79da), color-stop(60%, #9356dc), to(#9356dc));
+  -webkit-background-image: linear-gradient(to right bottom, #ff79da 0%, #9356dc 60%, #9356dc 100%);
+}
+
+.howinfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+  margin: auto;
+  text-align: left;
+  padding-top: 1em;
+}
+
+.infobox {
+  border-radius: 1.8em;
+  background-color: #f6f6f6;
+  padding: 1.8em;
+  font-weight: bold;
+  -webkit-box-shadow: 8px 8px 15px 15px #eaeaea;
+          box-shadow: 8px 8px 15px 15px #eaeaea;
+}
+
+.infobox__number {
+  background-color: #9356dc;
+  color: white;
+  padding: 0.2em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border-radius: 2em;
+  margin-left: -2.6em;
+}
+
+.infobox__icon {
+  padding: 1em;
+}
+
+.infobox:hover > .infobox__icon {
+  color: #9356dc;
+}
+
+.infobox:hover {
+  background-color: #f5edff;
+}
+
+.restsection {
+  background-color: #f6f6f6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  margin-top: 4em;
+  padding-top: 2em;
+  text-align: left;
+}
+
+.restsection__heading {
+  margin-left: 1em;
+}
+
+.restaurant {
+  background-color: white;
+  margin: 1em;
+  border-radius: 1em;
+  height: 18em;
+  text-align: left;
+  -webkit-box-shadow: 8px 8px 15px 15px #eaeaea;
+          box-shadow: 8px 8px 15px 15px #eaeaea;
+  position: relative;
+}
+
+.restaurant__img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  height: 13em;
+  float: top;
+  width: 100%;
+  border-top-left-radius: 1em;
+  border-top-right-radius: 1em;
+}
+
+.restaurant__name {
+  margin-top: 0.4em;
+  margin-bottom: 0.3em;
+  margin-left: 1em;
+}
+
+.restaurant__location {
+  margin-top: 0em;
+  margin-bottom: 0.4em;
+  margin-left: 1.2em;
+  font-weight: lighter;
+}
+
+.restaurant__new {
+  background-color: #99e2d0;
+  color: #008766;
+  position: absolute;
+  font-size: 1.3em;
+  right: 3rem;
+  top: 2rem;
+  padding: 0.2em 1.5em 0.2em 1.5em;
+}
+
+.restaurant__heart {
+  position: absolute;
+  right: 4rem;
+  bottom: 4rem;
+  opacity: 1;
+  -webkit-transition: opacity .7s ease-in-out;
+  transition: opacity .7s ease-in-out;
+  z-index: 1;
+}
+
+.restaurant__heart--solid {
+  position: absolute;
+  right: 4rem;
+  bottom: 4rem;
+  padding: 0.2rem;
+  margin: -0.2rem;
+  opacity: 0;
+  -webkit-transition: opacity 0.6s ease-in-out;
+  transition: opacity 0.6s ease-in-out;
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background-image: linear-gradient(#9356dc, #ff79da);
+  -webkit-text-fill-color: transparent;
+}
+
+.restaurant__heart:hover {
+  opacity: 0;
+}
+
+.restaurant__heart:hover + .restaurant__heart--solid {
+  opacity: 1;
+  -webkit-transform: scale(100%);
+          transform: scale(100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
+  background-image: linear-gradient(#9356dc, #ff79da);
+  -webkit-text-fill-color: transparent;
+}
+
+/* Footer BEM Block for use in entire site*/
+footer {
+  background-color: #353535;
+  color: white;
+  text-align: left;
+  padding: 1em;
+}
+
+.footerlinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer__link {
+  color: white;
+  text-align: left;
+  margin-top: 0.4em;
+}
+
+.footer__icon {
+  margin-right: 0.5em;
+}
+/*# sourceMappingURL=style.css.map */
