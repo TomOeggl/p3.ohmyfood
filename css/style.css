@@ -18,7 +18,8 @@ a {
 
 .logo--menu {
   text-align: left;
-  padding-left: 2rem;
+  padding-left: 3rem;
+  font-size: 1.7em;
 }
 
 body {
