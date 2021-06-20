@@ -38,7 +38,7 @@
     opacity: 0;
     height: 0px;
     padding: -16px;
-    margin: 0em;
+    margin: -16px;
     height: 0vh;
   }
 }
@@ -53,6 +53,7 @@
     transform: translateY(-9999px);
     opacity: 0;
     height: 0px;
+    max-height: 0px;
     padding: -16px;
     margin: 0em;
   }
@@ -100,10 +101,18 @@ nav {
   background-color: $darkgray;
   padding: 0.8em;
   margin-top: -1.2em;
+  @media (min-width: $biggestmobilewidthplus10px){
+    font-size: 0.7em;
+    padding:0.5em;
+    margin-top: -1.8em;
+  }
 }
 
 .nav__icon{
       margin: 1em;
+      @media (min-width: $biggestmobilewidthplus10px){
+        margin: 0.5em;
+      }
   }
 
 
@@ -128,6 +137,9 @@ nav {
   margin: auto;
   text-align: left;
   padding-top: 1em;
+  @media (min-width: $biggestmobilewidthplus10px){
+    text-align: center;
+  }
 }
 
 .infobox {
@@ -156,13 +168,19 @@ nav {
   &:hover{
     background-color: $purplegray;
   }
+/*
+  @media (min-width: 815px){
+      max-width: 70%;
+      min-width: 70%;
+      margin-left:auto;
+      margin-right: auto;
+  }*/
 }
 
 
 .restsection {
   background-color: $lightgray;
-  display: flex;
-  flex-flow: column;
+  
   margin-top: 4em;
   padding-top: 2em;
   text-align: left;
@@ -171,11 +189,17 @@ nav {
   }
 }
 
+.flexcontainer{
+  display: flex;
+  flex-flow: column;
+}
+
 .restaurant {
   background-color: white;
   margin: 1em;
   border-radius: 1em;
   height: 18em;
+  min-height: 18em;
   text-align: left;
   box-shadow: 8px 8px 15px 15px $darkgray;
   position: relative;
@@ -220,7 +244,9 @@ nav {
         opacity: 1;
         transition: opacity .7s ease-in-out;
         z-index: 1;
-    
+        @media (min-width: $biggestmobilewidthplus10px){
+          bottom: 2rem;
+        }
 
       &--solid{
         position: absolute;
@@ -234,6 +260,10 @@ nav {
         -webkit-background-clip: text;
         background-image: linear-gradient($primary, $secondary);
         -webkit-text-fill-color: transparent;
+        @media (min-width: $biggestmobilewidthplus10px){
+          bottom: 2rem;
+        }
+
       }
     }
     &__heart:hover{
@@ -253,3 +283,85 @@ nav {
 
 
 @import "./layout/footer.scss";
+
+@media (min-width: $biggestmobilewidthplus10px){
+  .contentcontainer{
+    max-width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template: repeat(2, auto) / repeat(3, auto);
+   
+    grid-template-areas: 
+                        "b r r"
+                        "h r r"
+                        ;
+    
+    
+  }
+  .bookinfo{
+    grid-area: b;
+    
+    transform: scale(80%);
+    margin-bottom: 0em;
+    font-size: 0.7em;
+    margin: 0px;
+    padding: 1em;
+    min-width: 23vw;
+    margin-top: 1em;
+    margin-bottom: -2em;
+    margin-left: -3em;
+  }
+  .howinfo{
+    grid-area: h;
+    font-size: 0.7em;
+    transform: scale(80%);
+    margin-top: -4em;
+    
+    padding-top: -2em;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 1.2em;
+    justify-self: top;
+    margin-left: -1em;
+    
+  }
+  .restsection{
+    transform: scale(80%);
+    grid-area: r;
+    width: auto;
+    justify-self: start;
+    min-width: 45em;
+    margin: -16px;
+    padding: 1em;
+    margin-top: -1.7em;
+    margin-right: -1em;
+    padding-right: 0em;
+    margin-left: -4em;
+  }
+  .infobox{
+    text-align: left;
+  }
+  .flexcontainer{
+    flex-wrap: wrap;
+    width: 60vw;
+    height: 80vh;
+    overflow: hidden;
+  }
+  .restaurant{
+    min-height: min-content;
+    max-height: 18em;
+    flex-shrink: 1;
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: 0;
+    flex: 0 0 auto;
+    width: 50%;
+    
+    max-width: 25vw;
+    font-size: 0.7em;
+    &__img{
+      height: calc(100% - 8vh);
+    }
+    margin-bottom: 2em;
+  }
+}

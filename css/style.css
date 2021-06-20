@@ -1,4 +1,5 @@
-/*main colors*/
+/* main colors */
+/* breakpoints */
 /*general rules for fonts and links appearance*/
 /*import fonts from google */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
@@ -10,10 +11,18 @@ a {
 .logo {
   font-family: "Shrikhand", cursive;
   font-weight: 350;
+  margin-top: 0px;
+  padding-top: .5em;
 }
 
 .logo--inverted {
   color: white;
+}
+
+@media (min-width: 1000px) {
+  .logo--inverted {
+    margin-bottom: .8em;
+  }
 }
 
 .logo--menu {
@@ -22,10 +31,27 @@ a {
   font-size: 1.7em;
 }
 
+@media (min-width: 1000px) {
+  .logo--menu {
+    margin-bottom: .8em;
+    margin-top: .3em;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1270px) {
+  .logo--menu {
+    font-size: 1.2em;
+    margin-top: .5em;
+    margin-bottom: -.5em;
+    margin-left: -.4em;
+  }
+}
+
 body {
   font-family: "Roboto", sans-serif;
   text-align: center;
   font-size: 210%;
+  margin: 0px;
 }
 
 @-webkit-keyframes spinner {
@@ -69,7 +95,7 @@ body {
     opacity: 0;
     height: 0px;
     padding: -16px;
-    margin: 0em;
+    margin: -16px;
     height: 0vh;
   }
 }
@@ -84,6 +110,7 @@ body {
             transform: translateY(-9999px);
     opacity: 0;
     height: 0px;
+    max-height: 0px;
     padding: -16px;
     margin: 0em;
   }
@@ -138,8 +165,22 @@ nav {
   margin-top: -1.2em;
 }
 
+@media (min-width: 1000px) {
+  nav {
+    font-size: 0.7em;
+    padding: 0.5em;
+    margin-top: -1.8em;
+  }
+}
+
 .nav__icon {
   margin: 1em;
+}
+
+@media (min-width: 1000px) {
+  .nav__icon {
+    margin: 0.5em;
+  }
 }
 
 .bookinfo {
@@ -168,16 +209,25 @@ nav {
   -webkit-background-image: linear-gradient(to right bottom, #ff79da 0%, #9356dc 70%, #9356dc 100%);
   -webkit-box-shadow: 8px 8px 15px 15px #eaeaea;
           box-shadow: 8px 8px 15px 15px #eaeaea;
-  -webkit-transition: -webkit-transform .3s ease-in-out;
-  transition: -webkit-transform .3s ease-in-out;
-  transition: transform .3s ease-in-out;
-  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 
 .btngeneral--menu {
   margin: 2rem;
   padding-left: 1em;
   padding-right: 1em;
+}
+
+@media (min-width: 1000px) {
+  .btngeneral--menu {
+    width: 30vw;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
 }
 
 .btngeneral:hover {
@@ -203,6 +253,12 @@ nav {
   padding-top: 1em;
 }
 
+@media (min-width: 1000px) {
+  .howinfo {
+    text-align: center;
+  }
+}
+
 .infobox {
   border-radius: 1.8em;
   background-color: #f6f6f6;
@@ -210,6 +266,13 @@ nav {
   font-weight: bold;
   -webkit-box-shadow: 8px 8px 15px 15px #eaeaea;
           box-shadow: 8px 8px 15px 15px #eaeaea;
+  /*
+  @media (min-width: 815px){
+      max-width: 70%;
+      min-width: 70%;
+      margin-left:auto;
+      margin-right: auto;
+  }*/
 }
 
 .infobox__number {
@@ -236,13 +299,6 @@ nav {
 
 .restsection {
   background-color: #f6f6f6;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: column;
-          flex-flow: column;
   margin-top: 4em;
   padding-top: 2em;
   text-align: left;
@@ -252,11 +308,22 @@ nav {
   margin-left: 1em;
 }
 
+.flexcontainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
 .restaurant {
   background-color: white;
   margin: 1em;
   border-radius: 1em;
   height: 18em;
+  min-height: 18em;
   text-align: left;
   -webkit-box-shadow: 8px 8px 15px 15px #eaeaea;
           box-shadow: 8px 8px 15px 15px #eaeaea;
@@ -306,6 +373,12 @@ nav {
   z-index: 1;
 }
 
+@media (min-width: 1000px) {
+  .restaurant__heart {
+    bottom: 2rem;
+  }
+}
+
 .restaurant__heart--solid {
   position: absolute;
   right: 4rem;
@@ -320,6 +393,12 @@ nav {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#9356dc), to(#ff79da));
   background-image: linear-gradient(#9356dc, #ff79da);
   -webkit-text-fill-color: transparent;
+}
+
+@media (min-width: 1000px) {
+  .restaurant__heart--solid {
+    bottom: 2rem;
+  }
 }
 
 .restaurant__heart:hover {
@@ -345,6 +424,13 @@ footer {
   padding: 1em;
 }
 
+@media (min-width: 1000px) {
+  footer {
+    padding-left: 0vw;
+    text-align: center;
+  }
+}
+
 .footerlinks {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -355,13 +441,129 @@ footer {
           flex-direction: column;
 }
 
+@media (min-width: 1000px) {
+  .footerlinks {
+    display: unset;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(15vw, auto))[4];
+        grid-template-columns: repeat(4, minmax(15vw, auto));
+    max-width: 90%;
+    margin-left: 0;
+    border-top: 1px solid white;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 1em;
+  }
+}
+
 .footer__link {
   color: white;
   text-align: left;
   margin-top: 0.4em;
 }
 
-.footer__icon {
-  margin-right: 0.5em;
+@media (min-width: 1000px) {
+  .footer__link {
+    font-size: 0.6em;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1000px) {
+  .contentcontainer {
+    max-width: 80%;
+    margin: auto;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: (auto)[2];
+    -ms-grid-columns: (auto)[3];
+        grid-template: repeat(2, auto)/repeat(3, auto);
+        grid-template-areas: "b r r" "h r r";
+  }
+  .bookinfo {
+    -ms-grid-row: 1;
+    -ms-grid-column: 1;
+    grid-area: b;
+    -webkit-transform: scale(80%);
+            transform: scale(80%);
+    margin-bottom: 0em;
+    font-size: 0.7em;
+    margin: 0px;
+    padding: 1em;
+    min-width: 23vw;
+    margin-top: 1em;
+    margin-bottom: -2em;
+    margin-left: -3em;
+  }
+  .howinfo {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: h;
+    font-size: 0.7em;
+    -webkit-transform: scale(80%);
+            transform: scale(80%);
+    margin-top: -4em;
+    padding-top: -2em;
+    margin: 0px;
+    padding: 0px;
+    padding-left: 1.2em;
+    -ms-grid-column-align: top;
+        justify-self: top;
+    margin-left: -1em;
+  }
+  .restsection {
+    -webkit-transform: scale(80%);
+            transform: scale(80%);
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 2;
+    grid-area: r;
+    width: auto;
+    -ms-grid-column-align: start;
+        justify-self: start;
+    min-width: 45em;
+    margin: -16px;
+    padding: 1em;
+    margin-top: -1.7em;
+    margin-right: -1em;
+    padding-right: 0em;
+    margin-left: -4em;
+  }
+  .infobox {
+    text-align: left;
+  }
+  .flexcontainer {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 60vw;
+    height: 80vh;
+    overflow: hidden;
+  }
+  .restaurant {
+    min-height: -webkit-min-content;
+    min-height: -moz-min-content;
+    min-height: min-content;
+    max-height: 18em;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+    min-width: 0;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    width: 50%;
+    max-width: 25vw;
+    font-size: 0.7em;
+    margin-bottom: 2em;
+  }
+  .restaurant__img {
+    height: calc(100% - 8vh);
+  }
 }
 /*# sourceMappingURL=style.css.map */

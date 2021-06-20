@@ -1,4 +1,5 @@
-/*main colors*/
+/* main colors */
+/* breakpoints */
 /*general rules for fonts and links appearance*/
 /*import fonts from google */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Shrikhand&display=swap");
@@ -10,10 +11,18 @@ a {
 .logo {
   font-family: "Shrikhand", cursive;
   font-weight: 350;
+  margin-top: 0px;
+  padding-top: .5em;
 }
 
 .logo--inverted {
   color: white;
+}
+
+@media (min-width: 1000px) {
+  .logo--inverted {
+    margin-bottom: .8em;
+  }
 }
 
 .logo--menu {
@@ -22,17 +31,34 @@ a {
   font-size: 1.7em;
 }
 
+@media (min-width: 1000px) {
+  .logo--menu {
+    margin-bottom: .8em;
+    margin-top: .3em;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1270px) {
+  .logo--menu {
+    font-size: 1.2em;
+    margin-top: .5em;
+    margin-bottom: -.5em;
+    margin-left: -.4em;
+  }
+}
+
 body {
   font-family: "Roboto", sans-serif;
   text-align: center;
   font-size: 210%;
+  margin: 0px;
 }
 
 @-webkit-keyframes slideFromDown {
   0% {
     -webkit-transform: translateY(20%);
             transform: translateY(20%);
-    opacity: .2;
+    opacity: 0.2;
   }
   100% {
     -webkit-transform: translateY(0%);
@@ -45,7 +71,7 @@ body {
   0% {
     -webkit-transform: translateY(20%);
             transform: translateY(20%);
-    opacity: .2;
+    opacity: 0.2;
   }
   100% {
     -webkit-transform: translateY(0%);
@@ -61,13 +87,22 @@ body {
 }
 
 .imageheader {
-  -o-object-fit: contain;
-  object-fit: contain;
+  max-height: 30vh;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
   max-width: 100%;
   margin-bottom: -5rem;
 }
 
+@media (min-width: 1000px) {
+  .imageheader {
+    max-height: 50vh;
+  }
+}
+
 .restaurantmenu {
+  min-width: 53rem;
   background-color: #f6f6f6;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -90,6 +125,14 @@ body {
   z-index: 1;
   -webkit-transition: opacity 0.7s ease-in;
   transition: opacity 0.7s ease-in;
+}
+
+@media (max-width: 1270px) {
+  .restaurantmenu__heart {
+    font-size: .8em;
+    top: 1.4em;
+    right: 3em;
+  }
 }
 
 .restaurantmenu__heart--solid {
@@ -207,7 +250,6 @@ body {
   overflow: hidden;
   text-overflow: ellipsis !important;
   min-width: none;
-  /*transition: transform 150ms ease-in-out 80ms;*/
 }
 
 .submenu__entry__textcontainer__description {
@@ -225,7 +267,6 @@ body {
   padding-bottom: 0.5rem;
   padding-right: 0em;
   margin-right: 0vw;
-  /*transition: transform 150ms ease-in-out 80ms;*/
 }
 
 .submenu__entry__movables__price {
@@ -246,7 +287,7 @@ body {
 
 .submenu__entry__movables__check {
   position: absolute;
-  right: 0vw;
+  right: calc(0vw - 4px);
   bottom: 0em;
   color: white;
   background-color: #99e2d0;
@@ -303,11 +344,6 @@ body {
   margin-right: 8em;
   -webkit-transform: translateX(0.8em);
           transform: translateX(0.8em);
-  /*margin-left: .9203em;*/
-  /* transform: translateX(-9.2em);*/
-  /*p{
-            margin-left: .9203em;
-            }*/
 }
 
 .btngeneral {
@@ -323,16 +359,25 @@ body {
   -webkit-background-image: linear-gradient(to right bottom, #ff79da 0%, #9356dc 70%, #9356dc 100%);
   -webkit-box-shadow: 8px 8px 15px 15px #eaeaea;
           box-shadow: 8px 8px 15px 15px #eaeaea;
-  -webkit-transition: -webkit-transform .3s ease-in-out;
-  transition: -webkit-transform .3s ease-in-out;
-  transition: transform .3s ease-in-out;
-  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+  -webkit-transition: -webkit-transform 0.3s ease-in-out;
+  transition: -webkit-transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
 }
 
 .btngeneral--menu {
   margin: 2rem;
   padding-left: 1em;
   padding-right: 1em;
+}
+
+@media (min-width: 1000px) {
+  .btngeneral--menu {
+    width: 30vw;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
 }
 
 .btngeneral:hover {
@@ -352,6 +397,13 @@ footer {
   padding: 1em;
 }
 
+@media (min-width: 1000px) {
+  footer {
+    padding-left: 0vw;
+    text-align: center;
+  }
+}
+
 .footerlinks {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -362,13 +414,98 @@ footer {
           flex-direction: column;
 }
 
+@media (min-width: 1000px) {
+  .footerlinks {
+    display: unset;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(15vw, auto))[4];
+        grid-template-columns: repeat(4, minmax(15vw, auto));
+    max-width: 90%;
+    margin-left: 0;
+    border-top: 1px solid white;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-top: 1em;
+  }
+}
+
 .footer__link {
   color: white;
   text-align: left;
   margin-top: 0.4em;
 }
 
-.footer__icon {
-  margin-right: 0.5em;
+@media (min-width: 1000px) {
+  .footer__link {
+    font-size: 0.6em;
+    text-align: center;
+  }
+}
+
+@media (min-width: 1000px) {
+  .submenucontainer {
+    width: 80%;
+    margin-left: 10vw;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (minmax(30vw, 1fr))[3];
+        grid-template-columns: repeat(3, minmax(30vw, 1fr));
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1270px) {
+  .submenucontainer {
+    -ms-grid-columns: (minmax(30vw, 1fr))[2];
+        grid-template-columns: repeat(2, minmax(30vw, 1fr));
+    width: 95%;
+    margin-left: 2vw;
+    font-size: .7em;
+  }
+}
+
+@media (min-width: 1000px) {
+  .submenu {
+    font-size: 0.7em;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1270px) {
+  .submenu__heading {
+    margin-left: -1rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .submenu__entry {
+    min-width: inherit;
+    margin-right: 2rem;
+    margin-bottom: 1rem;
+  }
+  .submenu__entry__textcontainer {
+    padding-left: 6rem;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1270px) {
+  .submenu__entry__textcontainer {
+    padding-left: 2rem;
+  }
+}
+
+@media (min-width: 1000px) {
+  .submenu__entry__movables__price {
+    font-size: 1.1em;
+    bottom: -0.3em;
+  }
+  .submenu__entry:hover > .submenu__entry__textcontainer {
+    margin-right: 8vw;
+    -webkit-transform: translateX(0.8vw);
+            transform: translateX(0.8vw);
+  }
 }
 /*# sourceMappingURL=menupage.css.map */
