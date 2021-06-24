@@ -45,4 +45,10 @@ body {
   text-align: center;
   font-size: 210%;
   margin: 0px;
+  @media (max-width: $ipadbreakpoint){
+    @media (min-width: $biggestmobilewidthplus10px){
+    /*font-size: 1.1em;*/
+    width: 100%;
+    }
+  }
 }

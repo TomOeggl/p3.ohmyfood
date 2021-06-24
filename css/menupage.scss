@@ -71,10 +71,10 @@ $entry-delay: 150ms;
     top: 1.4em;
     z-index: 1;
     transition: opacity 0.7s ease-in;
-    @media(max-width: $ipadbreakpoint){
-        font-size: .8em;
-        top: 1.4em;
-        right: 3em;
+    @media (max-width: $ipadbreakpoint) {
+      font-size: 0.8em;
+      top: 1.4em;
+      right: 3em;
     }
 
     &--solid {
@@ -108,7 +108,6 @@ $entry-delay: 150ms;
 
 .fa-check-circle {
   transform: scale(1.7);
-  -webkit-transform: scale(1.7);
   transform: rotate(1turn);
   transition: transform 360ms ease-out 70ms;
 }
@@ -176,7 +175,7 @@ $entry-delay: 150ms;
         position: absolute;
         scale: 75%;
         transform: scale(75%);
-        right: 1.5rem;
+        right: 1.3rem;
         bottom: -1.5rem;
         transform: translateX(0);
         transition: transform 150ms ease-in 80ms;
@@ -192,6 +191,7 @@ $entry-delay: 150ms;
         border-bottom-right-radius: 0.7em;
         border-top-right-radius: 0.7em;
         z-index: 0;
+        padding-top: calc(2.2em + 4px);
 
         transform: translateX(100%);
 
@@ -203,7 +203,7 @@ $entry-delay: 150ms;
     }
     &:hover > &__movables {
       h3 {
-        transform: translateX(-5.2em);
+        transform: translateX(-4.2em);
       }
       span {
         opacity: 1;
@@ -236,32 +236,31 @@ $entry-delay: 150ms;
 @import "./layout/footer.scss";
 
 @media (min-width: $biggestmobilewidthplus10px) {
-    .restaurantmenu{
-        @media(max-width: $ipadbreakpoint){
-            
-        }
+  .restaurantmenu {
+    @media (max-width: $ipadbreakpoint) {
     }
-  
-    .submenucontainer {
+  }
+
+  .submenucontainer {
     width: 80%;
     margin-left: 10vw;
     justify-content: center;
     display: grid;
     grid-template-columns: repeat(3, (minmax(30vw, 1fr)));
-    @media(max-width: $ipadbreakpoint){
-        grid-template-columns: repeat(2, (minmax(30vw, 1fr)));
-        width: 95%;
-        margin-left: 2vw;
-        font-size: .7em;
+    @media (max-width: $ipadbreakpoint) {
+      grid-template-columns: repeat(2, (minmax(30vw, 1fr)));
+      width: 95%;
+      margin-left: 2vw;
+      font-size: 0.7em;
     }
   }
   .submenu {
-    font-size: 0.7em;
+    font-size: 0.8em;
     width: 100%;
-    &__heading{
-        @media(max-width: $ipadbreakpoint){
-            margin-left: -1rem;
-        }
+    &__heading {
+      @media (max-width: $ipadbreakpoint) {
+        margin-left: -1rem;
+      }
     }
     &__entry {
       min-width: inherit;
@@ -269,17 +268,17 @@ $entry-delay: 150ms;
       margin-bottom: 1rem;
       &__textcontainer {
         padding-left: 6rem;
-        @media(max-width: $ipadbreakpoint){
-            padding-left: 2rem;
+        @media (max-width: $ipadbreakpoint) {
+          padding-left: 2rem;
         }
       }
       &__movables {
         &__price {
-          font-size: 1.1em;
+          font-size: 1.3em;
           bottom: -0.3em;
         }
       }
-      
+
       &:hover > &__textcontainer {
         margin-right: 8vw;
 

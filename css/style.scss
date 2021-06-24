@@ -3,37 +3,35 @@
 
 @-webkit-keyframes spinner {
   0% {
-      transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(1);
+    transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(1);
   }
-  50%{
-      transform: translate3d(-50%, -50%, 0) rotate(180deg) scale(1.2);
+  50% {
+    transform: translate3d(-50%, -50%, 0) rotate(180deg) scale(1.2);
   }
   100% {
-       transform: translate3d(-50%, -50%, 0) rotate(360deg) scale(1);
-
+    transform: translate3d(-50%, -50%, 0) rotate(360deg) scale(1);
   }
 }
 
 @keyframes spinner {
   0% {
-      transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(1);
+    transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(1);
   }
-  50%{
-      transform: translate3d(-50%, -50%, 0) rotate(180deg) scale(1.2);
+  50% {
+    transform: translate3d(-50%, -50%, 0) rotate(180deg) scale(1.2);
   }
   100% {
-       transform: translate3d(-50%, -50%, 0) rotate(360deg) scale(1);
-
+    transform: translate3d(-50%, -50%, 0) rotate(360deg) scale(1);
   }
 }
 
-@-webkit-keyframes containerOff{
-  0%{
+@-webkit-keyframes containerOff {
+  0% {
     height: 100vh;
     opacity: 1;
   }
 
-  100%{
+  100% {
     transform: translateY(-9999px);
     opacity: 0;
     height: 0px;
@@ -43,13 +41,13 @@
   }
 }
 
-@keyframes containerOff{
-  0%{
+@keyframes containerOff {
+  0% {
     height: 100vh;
     opacity: 1;
   }
 
-  100%{
+  100% {
     transform: translateY(-9999px);
     opacity: 0;
     height: 0px;
@@ -58,63 +56,60 @@
     margin: 0em;
   }
 }
-.spinnercontainer{
+.spinnercontainer {
   -webkit-animation: step-start containerOff infinite;
-          animation: step-start containerOff infinite;
+  animation: step-start containerOff infinite;
   -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  animation-duration: 1s;
   -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  animation-delay: 3s;
 }
 
 .spinner {
   height: 100vh;
   opacity: 1;
   position: relative;
-  transition: opacity linear 0.1s;        
+  transition: opacity linear 0.1s;
   &::before {
-      -webkit-animation: 2s linear infinite spinner;
-              animation: 2s linear infinite spinner;
-      border: solid 6px $tertiary;
-      border-bottom-color: $secondary;
-      border-radius: 50%;
-      content: "";
-      height: 40px;
-      left: 50%;
-      opacity: inherit;
-      position: absolute;
-      top: 50%;
-      transform: translate3d(-50%, -50%, 0);
-      transform-origin: center;
-      width: 40px;
-      will-change: transform;
-      
+    -webkit-animation: 2s linear infinite spinner;
+    animation: 2s linear infinite spinner;
+    border: solid 6px $tertiary;
+    border-bottom-color: $secondary;
+    border-radius: 50%;
+    content: "";
+    height: 40px;
+    left: 50%;
+    opacity: inherit;
+    position: absolute;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    transform-origin: center;
+    width: 40px;
+    will-change: transform;
   }
-} 
+}
 
-
-header{
-    box-shadow: 0px 10px 20px  lightgray;
+header {
+  box-shadow: 0px 10px 20px lightgray;
 }
 /* HOMEPAGE STYLES*/
 nav {
   background-color: $darkgray;
   padding: 0.8em;
   margin-top: -1.2em;
-  @media (min-width: $biggestmobilewidthplus10px){
+  @media (min-width: $biggestmobilewidthplus10px) {
     font-size: 0.7em;
-    padding:0.5em;
+    padding: 0.5em;
     margin-top: -1.8em;
   }
 }
 
-.nav__icon{
-      margin: 1em;
-      @media (min-width: $biggestmobilewidthplus10px){
-        margin: 0.5em;
-      }
+.nav__icon {
+  margin: 1em;
+  @media (min-width: $biggestmobilewidthplus10px) {
+    margin: 0.5em;
   }
-
+}
 
 .bookinfo {
   background-color: $lightgray;
@@ -127,8 +122,7 @@ nav {
     padding: 2em;
   }
 }
- @import "./components/btngeneral.scss";
-
+@import "./components/btngeneral.scss";
 
 .howinfo {
   display: flex;
@@ -137,7 +131,7 @@ nav {
   margin: auto;
   text-align: left;
   padding-top: 1em;
-  @media (min-width: $biggestmobilewidthplus10px){
+  @media (min-width: $biggestmobilewidthplus10px) {
     text-align: center;
   }
 }
@@ -148,27 +142,27 @@ nav {
   padding: 1.8em;
   font-weight: bold;
   box-shadow: 8px 8px 15px 15px $darkgray;
-  &__number{
-      background-color: $primary;
-      color: white;
-      padding: 0.2em;
-      padding-left: 0.5em;
-      padding-right: 0.5em;
-      border-radius: 2em;
-      margin-left: -2.6em;
+  &__number {
+    background-color: $primary;
+    color: white;
+    padding: 0.2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    border-radius: 2em;
+    margin-left: -2.6em;
   }
-  &__icon{
-      padding: 1em;
-  }
-
-  &:hover > &__icon{
-      color: $primary;
+  &__icon {
+    padding: 1em;
   }
 
-  &:hover{
+  &:hover > &__icon {
+    color: $primary;
+  }
+
+  &:hover {
     background-color: $purplegray;
   }
-/*
+  /*
   @media (min-width: 815px){
       max-width: 70%;
       min-width: 70%;
@@ -177,19 +171,18 @@ nav {
   }*/
 }
 
-
 .restsection {
   background-color: $lightgray;
-  
+
   margin-top: 4em;
   padding-top: 2em;
   text-align: left;
-  &__heading{
+  &__heading {
     margin-left: 1em;
   }
 }
 
-.flexcontainer{
+.flexcontainer {
   display: flex;
   flex-flow: column;
 }
@@ -199,108 +192,132 @@ nav {
   margin: 1em;
   border-radius: 1em;
   height: 18em;
-  min-height: 18em;
+  min-height: 14em;
   text-align: left;
   box-shadow: 8px 8px 15px 15px $darkgray;
   position: relative;
-    &__img{
-        -o-object-fit: cover;
-           object-fit: cover;
-        height: 13em;
-        float: top;
-        width: 100%;
-        border-top-left-radius: 1em;
-        border-top-right-radius: 1em;
-    }
+  &__img {
+    -o-object-fit: cover;
+    object-fit: cover;
+    height: 13em;
+    float: top;
+    width: 100%;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+  }
 
-    &__name{
-        margin-top: 0.4em;
-        margin-bottom: 0.3em;
-        margin-left: 1em;
-    }
-
-    &__location{
-        margin-top: 0em;
-        margin-bottom: 0.4em;
-        margin-left: 1.2em;
-        font-weight: lighter;
-    }
-
-    &__new{
-        background-color: $tertiary;
-        color: $tertiarydark;
-        position: absolute;
-        font-size: 1.3em;
-        right: 3rem;
-        top: 2rem;
-        padding: 0.2em 1.5em 0.2em 1.5em;
-    }
-
-    &__heart{
-        position: absolute;
-        right: 4rem;
-        bottom: 4rem;
+  &__name {
+    margin-top: 0.4em;
+    margin-bottom: 0.3em;
+    margin-left: 1em;
+    @media (min-width: $biggestmobilewidthplus10px) {
+     
+      @media (max-width: $ipadbreakpoint - 150px){
+        margin-top: 2%;
         
-        opacity: 1;
-        transition: opacity .7s ease-in-out;
-        z-index: 1;
-        @media (min-width: $biggestmobilewidthplus10px){
-          bottom: 2rem;
-        }
-
-      &--solid{
-        position: absolute;
-        right: 4rem;
-        bottom: 4rem;
-        padding: 0.2rem;
-        margin: -0.2rem;
-        opacity: 0;
-        transition: opacity 0.6s ease-in-out;
-        background-clip: text;
-        -webkit-background-clip: text;
-        background-image: linear-gradient($primary, $secondary);
-        -webkit-text-fill-color: transparent;
-        @media (min-width: $biggestmobilewidthplus10px){
-          bottom: 2rem;
-        }
-
       }
     }
-    &__heart:hover{
-      opacity: 0;  
+  }
+
+  &__location {
+    margin-top: 0em;
+    margin-bottom: 0.4em;
+    margin-left: 1.2em;
+    font-weight: lighter;
+    @media (min-width: $biggestmobilewidthplus10px) {
+     
+      @media (max-width: $ipadbreakpoint - 150px){
+        padding-top: -16px;
+        
+      }
+    }
+  }
+
+  &__new {
+    background-color: $tertiary;
+    color: $tertiarydark;
+    position: absolute;
+    font-size: 1.3em;
+    right: 3rem;
+    top: 2rem;
+    padding: 0.2em 1.5em 0.2em 1.5em;
+  }
+
+  &__heart {
+    position: absolute;
+    right: 4rem;
+    bottom: 4rem;
+
+    opacity: 1;
+    transition: opacity 0.7s ease-in-out;
+    z-index: 1;
+    @media (min-width: $biggestmobilewidthplus10px) {
+      bottom: 7%;
+      @media (max-width: $ipadbreakpoint - 150px){
+        right: 2rem;
+      }
     }
 
-    &__heart:hover + &__heart--solid{
-      
-      opacity: 1;
-        transform: scale(100%);
-        background-clip: text;
-        -webkit-background-clip: text;
-        background-image: linear-gradient($primary, $secondary);
-        -webkit-text-fill-color: transparent;
-    } 
-}
+    &--solid {
+      position: absolute;
+      right: 4rem;
+      bottom: 4rem;
+      padding: 0.2rem;
+      margin: -0.2rem;
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+      background-clip: text;
+      -webkit-background-clip: text;
+      background-image: linear-gradient($primary, $secondary);
+      -webkit-text-fill-color: transparent;
+      @media (min-width: $biggestmobilewidthplus10px) {
+        bottom: 7%;
+        @media (max-width: $ipadbreakpoint - 150px){
+          right: 2rem;
+        }
+      }
+    }
+  }
+  &__heart:hover {
+    opacity: 0;
+  }
 
+  &__heart:hover + &__heart--solid {
+    opacity: 1;
+    transform: scale(100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    background-image: linear-gradient($primary, $secondary);
+    -webkit-text-fill-color: transparent;
+  }
+}
 
 @import "./layout/footer.scss";
 
-@media (min-width: $biggestmobilewidthplus10px){
-  .contentcontainer{
+@media (min-width: $biggestmobilewidthplus10px) {
+  nav {
+    font-size: 0.6em;
+    padding: 0.2em;
+    margin-top: -2em;
+    z-index: -1;
+  }
+  .contentcontainer {
     max-width: 80%;
     margin: auto;
     display: grid;
     grid-template: repeat(2, auto) / repeat(3, auto);
-   
-    grid-template-areas: 
-                        "b r r"
-                        "h r r"
-                        ;
-    
-    
+
+    grid-template-areas:
+      "b r r"
+      "h r r";
+
+    @media (max-width: $ipadbreakpoint) {
+      max-width: unset;
+    }
   }
-  .bookinfo{
+  .bookinfo {
     grid-area: b;
-    
+
     transform: scale(80%);
     margin-bottom: 0em;
     font-size: 0.7em;
@@ -310,57 +327,109 @@ nav {
     margin-top: 1em;
     margin-bottom: -2em;
     margin-left: -3em;
+    @media (max-width: $ipadbreakpoint) {
+      font-size: 0.6em;
+      margin: auto;
+      min-width: 27vw;
+      margin-left: -0.5em;
+      margin-bottom: -5.5em;
+      margin-top: -0.2em;
+      max-height: 90%;
+      &__text {
+        padding: 0em;
+      }
+    }
   }
-  .howinfo{
+  .howinfo {
     grid-area: h;
     font-size: 0.7em;
     transform: scale(80%);
     margin-top: -4em;
-    
+
     padding-top: -2em;
     margin: 0px;
     padding: 0px;
     padding-left: 1.2em;
     justify-self: top;
     margin-left: -1em;
-    
+    @media (max-width: $ipadbreakpoint) {
+      font-size: 0.6em;
+      margin-left: 0em;
+    }
   }
-  .restsection{
+  .restsection {
     transform: scale(80%);
     grid-area: r;
     width: auto;
     justify-self: start;
-    min-width: 45em;
+    min-width: 70%;
     margin: -16px;
     padding: 1em;
     margin-top: -1.7em;
     margin-right: -1em;
     padding-right: 0em;
     margin-left: -4em;
+    @media (max-width: $ipadbreakpoint) {
+      min-width: 80vw;
+      margin: 0px;
+      margin-left: -2em;
+      margin-top: -2em;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      padding-left: 0.5em;
+    }
+    &__heading {
+      @media (max-width: $ipadbreakpoint) {
+        font-size: 1.1em;
+        margin: 0em;
+        padding-top: 0.2em;
+        padding-left: 0.2em;
+      }
+    }
   }
-  .infobox{
+  .infobox {
     text-align: left;
+    @media (max-width: $ipadbreakpoint) {
+      padding: 1.2em;
+    }
   }
-  .flexcontainer{
+  .flexcontainer {
     flex-wrap: wrap;
     width: 60vw;
-    height: 80vh;
-    overflow: hidden;
+    height: 30em;
+    @media (max-width: $ipadbreakpoint) {
+      height: 100vh;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+    /*overflow: hidden;*/
   }
-  .restaurant{
+  .restaurant {
+    min-height: -webkit-min-content;
+    min-height: -moz-min-content;
     min-height: min-content;
     max-height: 18em;
     flex-shrink: 1;
     flex-grow: 1;
     flex-basis: 0;
-    min-width: 0;
+    min-width: 22em;
     flex: 0 0 auto;
     width: 50%;
-    
+
     max-width: 25vw;
     font-size: 0.7em;
-    &__img{
+    @media (max-width: $ipadbreakpoint - 150px) {
+      min-width: 45%;
+      height: 40vh;
+      font-size: 0.6em;
+      width: 100%;
+    }
+    &__img {
       height: calc(100% - 8vh);
+      @media (max-width: $ipadbreakpoint) {
+        min-width: 1em;
+        height: calc(100% - 12vh);
+      }
     }
     margin-bottom: 2em;
   }

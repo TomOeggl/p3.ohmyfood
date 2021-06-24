@@ -38,7 +38,7 @@ a {
   }
 }
 
-@media (min-width: 1000px) and (max-width: 1270px) {
+@media (min-width: 1000px) and (max-width: 1550px) {
   .logo--menu {
     font-size: 1.2em;
     margin-top: .5em;
@@ -52,6 +52,13 @@ body {
   text-align: center;
   font-size: 210%;
   margin: 0px;
+}
+
+@media (max-width: 1550px) and (min-width: 1000px) {
+  body {
+    /*font-size: 1.1em;*/
+    width: 100%;
+  }
 }
 
 @-webkit-keyframes slideFromDown {
@@ -127,9 +134,9 @@ body {
   transition: opacity 0.7s ease-in;
 }
 
-@media (max-width: 1270px) {
+@media (max-width: 1550px) {
   .restaurantmenu__heart {
-    font-size: .8em;
+    font-size: 0.8em;
     top: 1.4em;
     right: 3em;
   }
@@ -167,9 +174,10 @@ body {
 }
 
 .fa-check-circle {
-  transform: scale(1.7);
   -webkit-transform: scale(1.7);
-  transform: rotate(1turn);
+          transform: scale(1.7);
+  -webkit-transform: rotate(1turn);
+          transform: rotate(1turn);
   -webkit-transition: -webkit-transform 360ms ease-out 70ms;
   transition: -webkit-transform 360ms ease-out 70ms;
   transition: transform 360ms ease-out 70ms;
@@ -274,7 +282,7 @@ body {
   scale: 75%;
   -webkit-transform: scale(75%);
           transform: scale(75%);
-  right: 1.5rem;
+  right: 1.3rem;
   bottom: -1.5rem;
   -webkit-transform: translateX(0);
           transform: translateX(0);
@@ -295,6 +303,7 @@ body {
   border-bottom-right-radius: 0.7em;
   border-top-right-radius: 0.7em;
   z-index: 0;
+  padding-top: calc(2.2em + 4px);
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   -webkit-transition: -webkit-transform 330ms ease-in-out 50ms;
@@ -310,8 +319,8 @@ body {
 }
 
 .submenu__entry:hover > .submenu__entry__movables h3 {
-  -webkit-transform: translateX(-5.2em);
-          transform: translateX(-5.2em);
+  -webkit-transform: translateX(-4.2em);
+          transform: translateX(-4.2em);
 }
 
 .submenu__entry:hover > .submenu__entry__movables span {
@@ -457,24 +466,24 @@ footer {
   }
 }
 
-@media (min-width: 1000px) and (max-width: 1270px) {
+@media (min-width: 1000px) and (max-width: 1550px) {
   .submenucontainer {
     -ms-grid-columns: (minmax(30vw, 1fr))[2];
         grid-template-columns: repeat(2, minmax(30vw, 1fr));
     width: 95%;
     margin-left: 2vw;
-    font-size: .7em;
+    font-size: 0.7em;
   }
 }
 
 @media (min-width: 1000px) {
   .submenu {
-    font-size: 0.7em;
+    font-size: 0.8em;
     width: 100%;
   }
 }
 
-@media (min-width: 1000px) and (max-width: 1270px) {
+@media (min-width: 1000px) and (max-width: 1550px) {
   .submenu__heading {
     margin-left: -1rem;
   }
@@ -491,7 +500,7 @@ footer {
   }
 }
 
-@media (min-width: 1000px) and (max-width: 1270px) {
+@media (min-width: 1000px) and (max-width: 1550px) {
   .submenu__entry__textcontainer {
     padding-left: 2rem;
   }
@@ -499,7 +508,7 @@ footer {
 
 @media (min-width: 1000px) {
   .submenu__entry__movables__price {
-    font-size: 1.1em;
+    font-size: 1.3em;
     bottom: -0.3em;
   }
   .submenu__entry:hover > .submenu__entry__textcontainer {
