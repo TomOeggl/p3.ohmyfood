@@ -5,21 +5,37 @@ footer {
   color: white;
   text-align: left;
   padding: 1em;
+  @media (min-width: $biggestmobilewidthplus10px) {
+    padding-left: 0vw;
+    text-align: center;
+  }
 }
 
 .footer {
   &links {
     display: flex;
     flex-direction: column;
+    @media (min-width: $biggestmobilewidthplus10px) {
+      display: unset;
+      display: grid;
+      grid-template-columns: repeat(4, (minmax(15vw, auto)));
+      max-width: 90%;
+      margin-left: 0;
+      border-top: 1px solid white;
+      margin-left: 10%;
+      margin-right: 10%;
+      padding-top: 1em;
+      
+    }
   }
 
   &__link {
     color: white;
     text-align: left;
     margin-top: 0.4em;
-  }
-
-  &__icon {
-    margin-right: 0.5em;
+    @media (min-width: $biggestmobilewidthplus10px) {
+      font-size: 0.6em;
+      text-align: center;
+    }
   }
 }

@@ -13,13 +13,30 @@ a {
 .logo {
   font-family: "Shrikhand", cursive;
   font-weight: 350;
+  margin-top: 0px;
+  padding-top: .5em;
   &--inverted {
     color: white;
+    @media (min-width: $biggestmobilewidthplus10px){
+      margin-bottom: .8em;
+      
+    }
   }
   &--menu {
     text-align: left;
     padding-left: 3rem;
     font-size: 1.7em;
+    @media (min-width: $biggestmobilewidthplus10px){
+      margin-bottom: .8em;
+      margin-top: .3em;
+      @media(max-width: $ipadbreakpoint){
+        font-size: 1.2em;
+        margin-top: .5em;
+        margin-bottom: -.5em;
+        margin-left: -.4em;
+      }
+    }
+    
   }
 }
 
@@ -27,4 +44,11 @@ body {
   font-family: "Roboto", sans-serif;
   text-align: center;
   font-size: 210%;
+  margin: 0px;
+  @media (max-width: $ipadbreakpoint){
+    @media (min-width: $biggestmobilewidthplus10px){
+    /*font-size: 1.1em;*/
+    width: 100%;
+    }
+  }
 }
