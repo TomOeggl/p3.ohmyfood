@@ -508,7 +508,7 @@ footer {
 
 @media (min-width: 1000px) {
   .submenu__entry__movables__price {
-    font-size: 1.3em;
+    font-size: 1.4em;
     bottom: -0.3em;
   }
   .submenu__entry:hover > .submenu__entry__textcontainer {

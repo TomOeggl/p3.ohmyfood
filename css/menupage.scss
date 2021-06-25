@@ -274,8 +274,11 @@ $entry-delay: 150ms;
       }
       &__movables {
         &__price {
-          font-size: 1.3em;
+          font-size: 1.4em;
           bottom: -0.3em;
+          @media (max-width: $ipadbreakpoint){
+            
+          }
         }
       }
 
