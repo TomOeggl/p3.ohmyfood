@@ -89,6 +89,11 @@ $entry-delay: 150ms;
       -webkit-background-clip: text;
       background-image: linear-gradient($primary, $secondary);
       -webkit-text-fill-color: transparent;
+      @media (max-width: $ipadbreakpoint) {
+        font-size: 0.8em;
+        top: 1.4em;
+        right: 3em;
+      }
     }
   }
 
@@ -203,7 +208,13 @@ $entry-delay: 150ms;
     }
     &:hover > &__movables {
       h3 {
-        transform: translateX(-4.2em);
+        transform: translateX(-4.7em);
+        @media (max-width: $ipadbreakpoint){
+          @media (min-width: $biggestmobilewidthplus10px){
+            transform: translateX(-3.7em);
+          }
+
+        }
       }
       span {
         opacity: 1;
@@ -277,7 +288,7 @@ $entry-delay: 150ms;
           font-size: 1.4em;
           bottom: -0.3em;
           @media (max-width: $ipadbreakpoint){
-            
+            font-size: 1.3;
           }
         }
       }
