@@ -686,11 +686,11 @@ footer {
 
 @media (min-width: 1000px) {
   .restaurant__img {
-    height: calc(100% - 8vh);
+    height: calc(100% - 4em);
   }
 }
 
-@media (min-width: 1000px) and (max-width: 1550px) {
+@media (min-width: 1000px) and (max-width: 1400px) {
   .restaurant__img {
     min-width: 1em;
     height: calc(100% - 12vh);
